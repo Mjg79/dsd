@@ -4,8 +4,8 @@
 // sample: #include <../../src/c/not.c>
 
 int main(int argc, char *argv) {
-	string line;
-	while(scanf("%[^\n]\n", line)) {
+	char line[1 << 20];
+	while(scanf("%[^\n]\n", line) > 1) {
 		// todo use line as an input for module
 		/* sample
 		   int input;
