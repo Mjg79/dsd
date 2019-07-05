@@ -4,10 +4,13 @@ import os
 if __name__ == "__main__":
     test_fail_flag = False
     for folder in sys.argv:
-        output_c_path = os.join(folder, "output_c.txt")
-        output_v_path = os.join(folder, "output_v.txt")
-        if not os.path.exists(output_c_path) or not os.path.exists(output_v_path):
-            print("{} does not match a test_file\n".format(folder))
+        if os.path.isfile(folder):
+            continue
+        output_c_path = os.path.join(folder, "output_c.txt")
+        output_v_path = os.path.join(folder, "output_v.txt")
+        if (not os.path.exists(output_c_path)) or (not os.path.exists(output_v_path)):
+            print("{} does not match a test_file".format(folder))
+            continue
         output_c = None
         output_v = None
         with open(file=output_c_path, mode="r") as co:
