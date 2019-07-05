@@ -3,7 +3,7 @@ import os
 
 if __name__ == "__main__":
     test_fail_flag = False
-    for folder in sys.argv:
+    for folder in os.listdir():
         if os.path.isfile(folder):
             continue
         output_c_path = os.path.join(folder, "output_c.txt")
