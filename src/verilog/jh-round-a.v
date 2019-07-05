@@ -4,8 +4,9 @@ module jh_round_a (
 	output [1023:0] out
 );         
 
-	wire [3:0] sbox [0:31] = { 4'h9,4'h0,4'h4,4'hb,4'hd,4'hc,4'h3,4'hf,4'h1,4'ha,4'h2,4'h6,4'h7,4'h5,4'h8,4'he,4'h3,4'hc,4'h6,4'hd,4'h5,4'h7,4'h1,4'h9,4'hf,4'h2,4'h0,4'h4,4'hb,4'ha,4'he,4'h8 };
-	
+	wire [0:31][3:0] sbox = { 4'h9,4'h0,4'h4,4'hb,4'hd,4'hc,4'h3,4'hf,4'h1,4'ha,4'h2,4'h6,4'h7,4'h5,4'h8,4'he,
+							   4'h3,4'hc,4'h6,4'hd,4'h5,4'h7,4'h1,4'h9,4'hf,4'h2,4'h0,4'h4,4'hb,4'ha,4'he,4'h8 };
+
 	wire [1023:0] L1;
 
 	assign L1[1023:1020] = sbox[ { round_in[255], state_in[1023:1020] } ];
