@@ -1,3 +1,8 @@
+`include "jh-round-a.v"
+`include "jh-round-b.v"
+`include "jh-init.v"
+`include "jh-final.v"
+
 module F8 (
 	input clk,
 	input [1023:0] state_in,
