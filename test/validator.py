@@ -28,5 +28,8 @@ if __name__ == "__main__":
             continue 
     if test_fail_flag:
         print("Test Failed!")
+		os.exit(1)
     else:
         print("All tests have been passed successfully!")
+		os.exit(0)
+
