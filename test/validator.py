@@ -23,7 +23,7 @@ if __name__ == "__main__":
             continue 
         for i in range(len(output_c)):
             if output_c[i] != output_v[i]:
-                print("{} test failed".format(folder))
+                print("{}'th value in {} test failed".format(i + 1, folder))
             test_fail_flag = True
             continue 
     if test_fail_flag:
