@@ -3,8 +3,24 @@ module jh_round_b (
 	output [255:0] out
 );
 
-	wire [0:15][3:0] sbox = { 4'h9,4'h1,4'hd,4'h7,4'h4,4'h2,4'h3,4'h8,4'h0,4'ha,4'hc,4'h5,4'hb,4'h6,4'hf,4'he };
-
+	wire [3:0] sbox [0:15];
+	assign sbox[0] = 4'h9;
+	assign sbox[1] = 4'h1;
+	assign sbox[2] = 4'hd;
+	assign sbox[3] = 4'h7;
+	assign sbox[4] = 4'h4;
+	assign sbox[5] = 4'h2;
+	assign sbox[6] = 4'h3;
+	assign sbox[7] = 4'h8;
+	assign sbox[8] = 4'h0;
+	assign sbox[9] = 4'ha;
+	assign sbox[10] = 4'hc;
+	assign sbox[11] = 4'h5;
+	assign sbox[12] = 4'hb;
+	assign sbox[13] = 4'h6;
+	assign sbox[14] = 4'hf;
+	assign sbox[15] = 4'he;
+	
 	wire [255:0] L1;
 
 	assign L1[255:252] = sbox[ in[255:252] ];

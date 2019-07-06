@@ -4,9 +4,40 @@ module jh_round_a (
 	output [1023:0] out
 );         
 
-	wire [0:31][3:0] sbox = { 4'h9,4'h0,4'h4,4'hb,4'hd,4'hc,4'h3,4'hf,4'h1,4'ha,4'h2,4'h6,4'h7,4'h5,4'h8,4'he,
-							   4'h3,4'hc,4'h6,4'hd,4'h5,4'h7,4'h1,4'h9,4'hf,4'h2,4'h0,4'h4,4'hb,4'ha,4'he,4'h8 };
-
+	wire [3:0] sbox [0:31];
+	assign sbox[0] = 4'h9;
+	assign sbox[1] = 4'h0;
+	assign sbox[2] = 4'h4;
+	assign sbox[3] = 4'hb;
+	assign sbox[4] = 4'hd;
+	assign sbox[5] = 4'hc;
+	assign sbox[6] = 4'h3;
+	assign sbox[7] = 4'hf;
+	assign sbox[8] = 4'h1;
+	assign sbox[9] = 4'ha;
+	assign sbox[10] = 4'h2;
+	assign sbox[11] = 4'h6;
+	assign sbox[12] = 4'h7;
+	assign sbox[13] = 4'h5;
+	assign sbox[14] = 4'h8;
+	assign sbox[15] = 4'he;
+	assign sbox[16] = 4'h3;
+	assign sbox[17] = 4'hc;
+	assign sbox[18] = 4'h6;
+	assign sbox[19] = 4'hd;
+	assign sbox[20] = 4'h5;
+	assign sbox[21] = 4'h7;
+	assign sbox[22] = 4'h1;
+	assign sbox[23] = 4'h9;
+	assign sbox[24] = 4'hf;
+	assign sbox[25] = 4'h2;
+	assign sbox[26] = 4'h0;
+	assign sbox[27] = 4'h4;
+	assign sbox[28] = 4'hb;
+	assign sbox[29] = 4'ha;
+	assign sbox[30] = 4'he;
+	assign sbox[31] = 4'h8;
+	
 	wire [1023:0] L1;
 
 	assign L1[1023:1020] = sbox[ { round_in[255], state_in[1023:1020] } ];
