@@ -7,6 +7,7 @@
 
 #include "sph_jh.h"
 
+#include "jhhash.h"
 
 
 void jhhash(void *output, const void *input)
