@@ -1,3 +1,5 @@
+`include "f8.v"
+
 module JH512 (
 	input clk,
 	input [1023:0] state,
