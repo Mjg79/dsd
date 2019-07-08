@@ -35,6 +35,8 @@
 
 #include "sph_jh.h"
 
+#include "jh.h"
+
 #if SPH_SMALL_FOOTPRINT && !defined SPH_SMALL_FOOTPRINT_JH
 #define SPH_SMALL_FOOTPRINT_JH   1
 #endif

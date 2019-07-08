@@ -21,7 +21,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module jh_tb;
+module tester_v_jh512;
 
 	// Inputs
 	reg clk;
@@ -40,7 +40,6 @@ module jh_tb;
 	);
 
 	initial begin
-	
 		// Initialize Inputs
 		clk = 0;
 		/*state = 0;
@@ -48,9 +47,9 @@ module jh_tb;
         	#100 data = 128'd12345609823;
 		state = 0;*/
 		
+		// data = 128'd7659432094555543122297600000000654;
 		data = 128'd7659432094555543122297600000000654;
 		state = 1024'd345;
-		
 	end
    	always begin
 		#1 clk = ~clk;
