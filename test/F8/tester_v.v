@@ -14,8 +14,8 @@ module tester_v_f8;
 
     initial begin
         clk = 0;
-        state_in = 1008'h0;
-        state_in[15:0] = 16'h0200;
+        state_in = 1024'h0;
+        state_in[1023:1016] = 8'h02;
         // $display("%h", state_in);
     end
 
