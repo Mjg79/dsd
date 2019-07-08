@@ -10,6 +10,9 @@
 
 int main(int argc, char *argv) {
     const char *input = (const char *)malloc(1024 * 4);
+    for (int i = 0; i < 1024; i++) {
+		input[i] = '0' - '0';
+	}
 	char *output = (const char *)malloc(1024 * 4);
     //set input here
     sph_jh_context sc;
@@ -23,6 +26,9 @@ int main(int argc, char *argv) {
     #ifdef SPH_64
     memcpy(output, sc.H.wide, sizeof sc.H.wide);
     #endif
+    for (int i = 63; i >= 0; i--) {	
+		printf("%02x", output[i]);
+	}
     //let majid push jh512, then copy its ouput hhere
     return 0;
 }
