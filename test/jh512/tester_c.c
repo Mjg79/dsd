@@ -9,9 +9,15 @@
 #include "../../src/c/jhhash.h"
 
 int main(int argc, char *argv) {
-    const char *input = (const char *)malloc(1024 * 4);
-	char *output = (const char *)malloc(1024 * 4);
-    jhhash(output, input);
-    printf("%b", output);
+	char *input = (char *) malloc(1024);
+	for (int i = 0; i < 1024; i++) {
+		input[i] = 0;
+	}
+	char *output = (char *) malloc(1024);
+    jhhash(output, input); 
+	for (int i = 0; i < 64; i++) {	
+		printf("%02x", output[i]);
+	}
     return 0;
 }
+

@@ -216,8 +216,8 @@ struct fpga_info {
 
 static inline void swap_endian(void *dest_p, const void *src_p, int bytes)
 {
-	uint32_t *dest = dest_p;
-	const uint32_t *src = src_p;
+	uint32_t *dest = (uint32_t *) dest_p;
+	const uint32_t *src = (uint32_t *) src_p;
 	int num = bytes / 4;
 	int i;
 
@@ -227,8 +227,8 @@ static inline void swap_endian(void *dest_p, const void *src_p, int bytes)
 
 static inline void swap_endian_64(void *dest_p, const void *src_p, int bytes)
 {
-	uint32_t *dest = dest_p;
-	const uint32_t *src = src_p;
+	uint32_t *dest = (uint32_t *) dest_p;
+	const uint32_t *src = (uint32_t *) src_p;
 	int num = bytes / 4;
 	int i;
 	

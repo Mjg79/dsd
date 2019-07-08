@@ -21,5 +21,5 @@ void jhhash(void *output, const void *input)
 	sph_jh512_close(&ctx, (void*)hash);
 
 	
-	memcpy(output, hash, 32);
+	memcpy(output, hash, 64);
 }
