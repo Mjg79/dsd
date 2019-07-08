@@ -14,11 +14,14 @@ module tester_v_f8;
 
     initial begin
         clk = 0;
-        state_in = 1024'd2500;
+        state_in = 1008'h0;
+        state_in[15:0] = 16'h0200;
+        // $display("%h", state_in);
     end
 
     always begin
         #1 clk = ~clk;
+        $display("%h", state_out);
     end
 
 endmodule 
